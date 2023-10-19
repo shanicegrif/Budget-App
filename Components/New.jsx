@@ -28,11 +28,12 @@ function New() {
     }
     fetch(`${API}/transactions`, httpOptions)
     .then((res) => {
-      console.transaction(res);
+      console.log(res);
       alert(`${transaction.itemName} was added to the budget!`);
       navigate("/transactions");
     })
     .catch((error) => {
+      console.log(transaction);
       console.error("Error adding data.", error)
     })
   }
@@ -57,7 +58,7 @@ function New() {
         <label htmlFor="date">Date:</label>
         <input
           id="date"
-          type="text"
+          type="date"
           value={transaction.date}
           onChange={handleTextChange}
           required
@@ -85,7 +86,7 @@ function New() {
           type="text"
           value={transaction.category}
           onChange={handleTextChange}
-          placeholder="enter amount"
+          placeholder="what category does this fall into"
         />
         <br />
 

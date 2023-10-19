@@ -17,9 +17,9 @@ function Index() {
 
     return (
       <div className="Transactions">
-        <h2>Index</h2>
-        <section>
+        <h2>All Transactions</h2>
           <h3>Bank Account Total: ${bankTotal}</h3>
+        <section>
           <table>
             <thead>
               <tr>
