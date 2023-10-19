@@ -13,7 +13,7 @@ function Index() {
     .catch((error) => {
       console.error("Error fetching data.", error)
     })
-  })
+  }, [])
 
     return (
       <div className="Transactions">
@@ -30,7 +30,7 @@ function Index() {
             </thead>
             <tbody>
               {transactions.map((transaction, index) =>( 
-                <Transaction key={index} transaction={transaction} id = {index}/>
+                <Transaction key={index} transaction={transaction} index={index}/>
               ))}
             </tbody>
           </table>
