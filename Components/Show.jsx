@@ -12,7 +12,7 @@ function Show() {
       .then((res) => res.json())
       .then((transaction) => {
         setTransaction(transaction);
-        console.log(transaction)
+        console.log(transaction);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -20,7 +20,7 @@ function Show() {
   }, [index, navigate]);
 
   const handleDelete = () => {
-    const httpOptions = { "method": "DELETE"};
+    const httpOptions = { method: "DELETE" };
 
     fetch(`${API}/transactions/${index}`, httpOptions)
       .then((res) => {
@@ -29,34 +29,34 @@ function Show() {
         navigate("/transactions");
       })
       .catch((err) => console.error(err));
-  }
-    return (
-      <div className="showTransaction">
-        <h2>Transaction</h2>
-        <article>
-      <div>
-        <h2>Transaction: {transaction.itemName}</h2>
-        <p>Date: {transaction.date}</p>
-        <p>Amount: ${transaction.amount}</p>
-      </div>
-      <div className="showNavigation">
+  };
+  return (
+    <div className="showTransaction">
+      <h2>Transaction</h2>
+      <article>
         <div>
-          <Link to={"/transactions"}>
-            <button>Back</button>
-          </Link>
+          <h2>Transaction: {transaction.itemName}</h2>
+          <p>Date: {transaction.date}</p>
+          <p>Amount: ${transaction.amount}</p>
         </div>
-        <div>
-          <Link to={`/transactions/${index}/edit`}>
-            <button>Edit</button>
-          </Link>
+        <div className="showNavigation">
+          <div>
+            <Link to={"/transactions"}>
+              <button>Back</button>
+            </Link>
+          </div>
+          <div>
+            <Link to={`/transactions/${index}/edit`}>
+              <button>Edit</button>
+            </Link>
+          </div>
+          <div>
+            <button onClick={handleDelete}>Delete</button>
+          </div>
         </div>
-        <div>
-          <button onClick={handleDelete}>Delete</button>
-        </div>
-      </div>
-    </article>
-      </div>
-    );
-  }
-  
-  export default Show;
+      </article>
+    </div>
+  );
+}
+
+export default Show;

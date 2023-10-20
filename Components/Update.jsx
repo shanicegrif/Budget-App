@@ -16,17 +16,17 @@ function Update() {
   const navigate = useNavigate();
 
   const handleTextChange = (event) => {
-    setTransaction({...transaction, [event.target.id]: event.target.value})
-  }
+    setTransaction({ ...transaction, [event.target.id]: event.target.value });
+  };
 
   useEffect(() => {
     fetch(`${API}/transactions/${index}`)
-    .then((res) => res.json())
-    .then((transaction) => {
-      setTransaction(transaction)
-    })
-    .catch(() => navigate("*"))
-  }, [index, navigate])
+      .then((res) => res.json())
+      .then((transaction) => {
+        setTransaction(transaction);
+      })
+      .catch(() => navigate("*"));
+  }, [index, navigate]);
 
   const updateTransaction = () => {
     const httpOptions = {
@@ -38,17 +38,17 @@ function Update() {
     };
 
     fetch(`${API}/transactions/${index}`, httpOptions)
-    .then(() => {
-      alert(`${transaction.itemName} has been updated!`)
-      navigate(`/transactions/${index}`)
-    })
-    .catch((error) => console.error(error))
-  }
+      .then(() => {
+        alert(`${transaction.itemName} has been updated!`);
+        navigate(`/transactions/${index}`);
+      })
+      .catch((error) => console.error(error));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     updateTransaction();
-  }
+  };
 
   return (
     <div className="updateTransaction">
