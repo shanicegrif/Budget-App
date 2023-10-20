@@ -10,7 +10,7 @@ function Transaction({transaction, index}) {
          <Link to={`/transactions/${index}`}>{transaction.itemName}</Link>
         </td>
         <td>
-        <p>{transaction.amount}</p>
+        <p>${transaction.amount}</p>
         </td>
       </tr>
     );

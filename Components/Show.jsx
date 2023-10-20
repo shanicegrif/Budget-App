@@ -25,7 +25,7 @@ function Show() {
     fetch(`${API}/transactions/${index}`, httpOptions)
       .then((res) => {
         console.log(res);
-        alert("Transaction was deleted!");
+        alert(`${transaction.itemName} transaction was deleted!`);
         navigate("/transactions");
       })
       .catch((err) => console.error(err));
@@ -37,7 +37,7 @@ function Show() {
       <div>
         <h2>Transaction: {transaction.itemName}</h2>
         <p>Date: {transaction.date}</p>
-        <p>Amount: {transaction.amount}</p>
+        <p>Amount: ${transaction.amount}</p>
       </div>
       <div className="showNavigation">
         <div>

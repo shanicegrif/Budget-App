@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 const API = import.meta.env.VITE_BASE_URL;
 
 function New() {
-
   const [transaction, setTransaction] = useState({
     itemName: "",
     date: "",
@@ -15,8 +14,8 @@ function New() {
   const navigate = useNavigate();
 
   const handleTextChange = (event) => {
-    setTransaction({...transaction, [event.target.id]: event.target.value})
-  }
+    setTransaction({ ...transaction, [event.target.id]: event.target.value });
+  };
 
   const addTransaction = () => {
     const httpOptions = {
@@ -25,28 +24,28 @@ function New() {
       headers: {
         "Content-type": "application/json",
       },
-    }
+    };
     fetch(`${API}/transactions`, httpOptions)
-    .then((res) => {
-      console.log(res);
-      alert(`${transaction.itemName} was added to the budget!`);
-      navigate("/transactions");
-    })
-    .catch((error) => {
-      console.log(transaction);
-      console.error("Error adding data.", error)
-    })
-  }
+      .then((res) => {
+        console.log(res);
+        alert(`${transaction.itemName} was added to the budget!`);
+        navigate("/transactions");
+      })
+      .catch((error) => {
+        console.log(transaction);
+        console.error("Error adding data.", error);
+      });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     addTransaction();
-  }
+  };
 
-    return (
-      <div className="newTransaction">
-        <h2>Add New Transaction</h2>
-        <form onSubmit={handleSubmit}>
+  return (
+    <div className="newTransaction">
+      <h2>Add New Transaction</h2>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name"> Transaction Name:</label>
         <input
           id="itemName"
@@ -92,8 +91,8 @@ function New() {
 
         <input type="submit" />
       </form>
-      </div>
-    );
-  }
-  
-  export default New;
+    </div>
+  );
+}
+
+export default New;
