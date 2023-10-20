@@ -26,12 +26,12 @@ function Update() {
       setTransaction(transaction)
     })
     .catch(() => navigate("*"))
-  })
+  }, [index, navigate])
 
   const updateTransaction = () => {
     const httpOptions = {
       method: "PUT",
-      body: JSON.stringify(log),
+      body: JSON.stringify(transaction),
       headers: {
         "Content-type": "application/json",
       },
