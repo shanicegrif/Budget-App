@@ -44,18 +44,18 @@ function Show() {
           <p>Date: {transaction.date}</p>
           <p>Amount: ${transaction.amount}</p>
         </div>
-        <div className="showNavigation">
-          <div>
+        <div className="showNav row align-items-center">
+          <div class="col">
             <Link to={"/transactions"}>
               <button>Back</button>
             </Link>
           </div>
-          <div>
+          <div class="col">
             <Link to={`/transactions/${index}/edit`}>
               <button>Edit</button>
             </Link>
           </div>
-          <div>
+          <div class="col">
             <button onClick={handleDelete}>Delete</button>
           </div>
         </div>

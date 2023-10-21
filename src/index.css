@@ -1,3 +1,18 @@
+body {
+  margin: 0;
+  display: flex;
+}
+
+nav .navButton {
+  position: absolute;
+  right: 50px;
+}
+
+.container {
+width: 40vw;
+margin-top: 300px;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -7,34 +22,17 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.bankAccount {
+  position: relative;
+  top: 120px; 
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-
-h2 {
-  position: absolute;
-  top: 150px;
-  left: 70px;
-}
-
-h3 {
-  margin-top: 100px;
-  margin-bottom: 20px;
-}
-
-nav .navButton {
-  position: absolute;
-  right: 50px;
+.Transactions {
+  margin-left: 80px;
 }
 
 .negative {
@@ -45,11 +43,31 @@ nav .navButton {
   color: green;
 }
 
+h1 {
+  font-size: 3.2em;
+}
+
+
+h2 {
+  position: absolute;
+  top: 250px;
+  left: 70px;
+}
+
+h3 {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.navShow button {
+  width: 100%;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  margin-left: -125px;
-  margin-right: -125px;
+  margin-left: -100px;
+  margin-right: -100px;
 }
 
 td {
@@ -57,7 +75,7 @@ td {
 }
 
 h4 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 button {
@@ -74,8 +92,4 @@ button {
 }
 button:hover {
   border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }

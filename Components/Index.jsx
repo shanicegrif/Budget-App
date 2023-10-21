@@ -4,7 +4,6 @@ const API = import.meta.env.VITE_BASE_URL;
 
 function Index() {
   const [transactions, setTransactions] = useState([]);
-  const [bankTotal, setBankTotal] = useState(0);
 
   useEffect(() => {
     fetch(`${API}/transactions`)
@@ -14,21 +13,12 @@ function Index() {
           ...transaction,
           date: formatTransactionDate(transaction.date),
         }));
-        setTransactions(transactions);
-        totalCalculator(transactions);
+        setTransactions(formattedData);
       })
       .catch((error) => {
         console.error("Error fetching data.", error);
       });
   }, []);
-
-  const totalCalculator = (transactionData) => {
-    const total = transactionData.reduce(
-      (sum, transaction) => sum + Number(transaction.amount),
-      0
-    );
-    setBankTotal(total);
-  };
 
   const formatTransactionDate = (dateString) => {
     const options = { month: "long", day: "numeric" };
@@ -38,7 +28,6 @@ function Index() {
   return (
     <div className="Transactions">
       <h2>All Transactions</h2>
-      <h3>Bank Account Total: ${bankTotal}</h3>
       <section>
         <table>
           <thead>
