@@ -35,7 +35,7 @@ function Show() {
       <h2>Transaction</h2>
       <article>
         <div>
-          <h2>Transaction: {transaction.itemName}</h2>
+          <h3>Transaction: {transaction.itemName}</h3>
           <p>Date: {transaction.date}</p>
           <p>Amount: ${transaction.amount}</p>
         </div>

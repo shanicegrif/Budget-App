@@ -1,4 +1,3 @@
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -21,6 +20,18 @@ h1 {
   line-height: 1.1;
 }
 
+
+h2 {
+  position: absolute;
+  top: 150px;
+  left: 70px;
+}
+
+nav .navButton {
+  position: absolute;
+  right: 50px;
+}
+
 .negative {
   color: red;
 }
@@ -28,6 +39,12 @@ h1 {
 .positive {
   color: green;
 }
+
+/* form {
+  display: flex;
+  flex-direction: column;
+  margin-left: -300px;
+} */
 
 button {
   border-radius: 8px;
