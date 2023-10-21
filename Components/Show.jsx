@@ -9,7 +9,12 @@ function Show() {
 
   useEffect(() => {
     fetch(`${API}/transactions/${index}`)
-      .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        navigate("/404");
+      }
+      return res.json();
+    })
       .then((transaction) => {
         setTransaction(transaction);
         console.log(transaction);
