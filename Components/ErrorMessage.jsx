@@ -1,7 +1,7 @@
 function ErrorMessage() {
   return (
     <div className="ErrorMessage">
-      <h2>Budget could not be fould. Try again.</h2>
+      <h4 className="alert alert-danger">Budget could not be fould. Try again.</h4>
     </div>
   );
 }

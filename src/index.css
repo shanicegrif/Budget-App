@@ -27,6 +27,11 @@ h2 {
   left: 70px;
 }
 
+h3 {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
 nav .navButton {
   position: absolute;
   right: 50px;
@@ -40,11 +45,20 @@ nav .navButton {
   color: green;
 }
 
-/* form {
+form {
   display: flex;
   flex-direction: column;
-  margin-left: -300px;
-} */
+  margin-left: -125px;
+  margin-right: -125px;
+}
+
+td {
+  padding-right: 60px;
+}
+
+h4 {
+  font-size: 50px;
+}
 
 button {
   border-radius: 8px;
