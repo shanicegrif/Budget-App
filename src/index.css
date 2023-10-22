@@ -15,24 +15,25 @@ margin-top: 300px;
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #AE445A;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #AE445A;
 }
 
 .bankAccount {
   position: relative;
   top: 120px; 
-  background-color: #f0f0f0;
+  background-color: #451952;
+  color: #E8BCB9;
   padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
 .Transactions {
-  margin-left: 80px;
+  margin-left: 30px;
 }
 
 .negative {
@@ -43,10 +44,14 @@ a:hover {
   color: green;
 }
 
+th {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
 h1 {
   font-size: 3.2em;
 }
-
 
 h2 {
   position: absolute;
@@ -54,8 +59,20 @@ h2 {
   left: 70px;
 }
 
+.transac-info {
+  border: 2px solid #662549;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+}
+
+.transac-info p, h3 {
+  margin-left: 20px;
+}
+
 h3 {
-  margin-top: 100px;
+  margin-top: 25px;
   margin-bottom: 20px;
 }
 
@@ -91,5 +108,5 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #451952 ;
 }

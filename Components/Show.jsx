@@ -39,23 +39,25 @@ function Show() {
     <div className="showTransaction">
       <h2>Transaction</h2>
       <article>
-        <div>
+        <div className="transac-info">
           <h3>Transaction: {transaction.itemName}</h3>
           <p>Date: {transaction.date}</p>
           <p>Amount: ${transaction.amount}</p>
+          <p>From: {transaction.from}</p>
+          <p>Category: {transaction.category}</p>
         </div>
-        <div className="showNav row align-items-center">
-          <div class="col">
+        <div className="showNav row align-items-center" style={{marginLeft:"25px"}}>
+          <div className="col">
             <Link to={"/transactions"}>
               <button>Back</button>
             </Link>
           </div>
-          <div class="col">
+          <div className="col">
             <Link to={`/transactions/${index}/edit`}>
               <button>Edit</button>
             </Link>
           </div>
-          <div class="col">
+          <div className="col">
             <button onClick={handleDelete}>Delete</button>
           </div>
         </div>
