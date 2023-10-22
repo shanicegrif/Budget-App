@@ -11,22 +11,10 @@ function New() {
     category: "",
   });
 
-  const [categories, setCategories] = useState(["Groceries", "Shopping", "Utilities"]);
   const navigate = useNavigate();
 
   const handleTextChange = (event) => {
     setTransaction({ ...transaction, [event.target.id]: event.target.value });
-  };
-
-  const handleCategoryChange = (event) => {
-    const selectedCategory = event.target.value;
-    
-    // Add the category to the list if it doesn't exist
-    if (!categories.includes(selectedCategory)) {
-      setCategories([...categories, selectedCategory]);
-    }
-
-    setTransaction({ ...transaction, category: selectedCategory });
   };
 
   const addTransaction = () => {
@@ -92,21 +80,15 @@ function New() {
           placeholder="who this transaction was with"
           required
         />
-
         <label htmlFor="category">Category:</label>
-        <select
+        <input
           id="category"
+          type="text"
           value={transaction.category}
-          onChange={handleCategoryChange}
-        >
-          <option value="">Select or add a category</option>
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-
+          onChange={handleTextChange}
+          placeholder="what category does this fall into"
+          required
+        />
         <br />
         <button type="submit" className="newButton">
           Create Transaction
