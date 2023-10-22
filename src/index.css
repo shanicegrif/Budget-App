@@ -5,10 +5,15 @@ body {
   display: flex;
 
 }
+nav {
+  background-image: url(/budget\ image.png);
+  font-family: 'Satisfy', cursive;
+}
 
 nav .navButton {
   position: absolute;
   right: 50px;
+  font-size: 20px;
 }
 
 .container {
@@ -17,7 +22,7 @@ nav .navButton {
 
 a {
   font-weight: 500;
-  color: #ae445a;
+  color: #d62549;
   text-decoration: inherit;
 }
 a:hover {
@@ -27,11 +32,28 @@ a:hover {
 .bankAccount {
   position: relative;
   top: 120px;
-  background-color: #451952;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: #070f7ef5;
   color: #e8bcb9;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  transition: width 0.3s ease-in;
 }
 
 .Transactions {
@@ -57,13 +79,12 @@ h1 {
 
 h2 {
   position: absolute;
-  top: 250px;
+  top: 325px;
   left: 70px;
 }
 
 .transac-info {
-
-  border: 2px solid #662549;
+  border: 2px solid #d62549;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding-bottom: 2px;
