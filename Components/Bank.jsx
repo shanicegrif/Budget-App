@@ -1,27 +1,13 @@
 import { useEffect, useState } from "react";
 const API = import.meta.env.VITE_BASE_URL;
 
-function Bank() {
+function Bank({transactions, totalCalculator}) {
   const [bankTotal, setBankTotal] = useState(0);
 
   useEffect(() => {
-    fetch(`${API}/transactions`)
-      .then((res) => res.json())
-      .then((transactions) => {
-        totalCalculator(transactions);
-      })
-      .catch((error) => {
-        console.error("Error fetching data.", error);
-      });
-  }, []);
-
-  const totalCalculator = (transactionData) => {
-    const total = transactionData.reduce(
-      (sum, transaction) => sum + Number(transaction.amount),
-      0
-    );
+    const total = totalCalculator(transactions);
     setBankTotal(total);
-  };
+  }, [transactions, totalCalculator]);
 
   return (
     <div className="bankAccount">

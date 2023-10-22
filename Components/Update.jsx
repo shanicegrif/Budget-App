@@ -97,10 +97,12 @@ function Update() {
         />
         <br />
 
-        <input type="submit" />
+        <button type="submit" className="updateButton">
+          Update Transaction
+        </button>
       </form>
       <Link to={`/transactions/${index}`}>
-        <button>Cancel</button>
+        <button className="cancelButton">Cancel</button>
       </Link>
     </div>
   );

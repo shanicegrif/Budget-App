@@ -16,6 +16,7 @@ function Transaction({ transaction, index, formattedDate }) {
       </tr>
       <hr style={{marginRight:"-280px"}}/>
     </>
+    
   );
 }
 

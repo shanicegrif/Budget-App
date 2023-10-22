@@ -46,7 +46,7 @@ function Show() {
           <p>From: {transaction.from}</p>
           <p>Category: {transaction.category}</p>
         </div>
-        <div className="showNav row align-items-center" style={{marginLeft:"25px"}}>
+        <div className="showNav row align-items-center" style={{marginLeft:"40px", marginRight:"40px"}}>
           <div className="col">
             <Link to={"/transactions"}>
               <button>Back</button>

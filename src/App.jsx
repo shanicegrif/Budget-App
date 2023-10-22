@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Home from "../Components/Home";
 import ErrorMessage from "../Components/ErrorMessage";
@@ -8,13 +9,36 @@ import New from "../Components/New";
 import Show from "../Components/Show";
 import Update from "../Components/Update";
 import Bank from "../Components/Bank";
+const API = import.meta.env.VITE_BASE_URL;
 
 function App() {
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API}/transactions`)
+      .then((res) => res.json())
+      .then((transactions) => {
+        setTransactions(transactions)
+        totalCalculator(transactions);
+      })
+      .catch((error) => {
+        console.error("Error fetching data.", error);
+      });
+  }, [transactions]);
+
+  const totalCalculator = (transactionData) => {
+    const total = transactionData.reduce(
+      (sum, transaction) => sum + Number(transaction.amount),
+      0
+    );
+    return total;
+  };
+
   return (
     <div>
       <BrowserRouter>
         <NavBar />
-        <Bank/>
+        <Bank transactions={transactions} totalCalculator={totalCalculator}/>
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
