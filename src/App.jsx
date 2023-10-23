@@ -33,6 +33,8 @@ function App() {
     );
     return total;
   };
+  // Example file: src/App.js
+console.log(`${API}`);
 
   return (
     <div>
