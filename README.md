@@ -15,3 +15,5 @@ Budgeting App is a simple web application built using React that allows users to
 
 ## Other Links
 - [Trello Board Budget App](https://trello.com/invite/b/2dVb6TjE/ATTIb8999e4e63857c2d1b8d509744f4549e7FABFCF4/budget-app)
+- [Deployed Budget Front](https://tranquil-seahorse-a9d5e3.netlify.app/)
+- [Deployed Budget Server](https://dapper-dragon-302e39.netlify.app/)
