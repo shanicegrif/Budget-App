@@ -32,7 +32,6 @@ function New() {
         navigate("/transactions");
       })
       .catch((error) => {
-        console.log(transaction);
         console.error("Error adding data.", error);
       });
   };

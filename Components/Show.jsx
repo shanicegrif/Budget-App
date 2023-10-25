@@ -17,7 +17,6 @@ function Show() {
     })
       .then((transaction) => {
         setTransaction(transaction);
-        console.log(transaction);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
